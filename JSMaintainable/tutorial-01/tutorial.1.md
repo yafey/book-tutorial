@@ -39,7 +39,7 @@
     var price = .4;
     var price = 10.; 
     var num   = 010; // 八进制
-    ```javascript
+    ```
 
 11. null的使用：
     a. 用来初始化一个变量，这个变量将来可能赋值为对象
@@ -89,7 +89,7 @@
     if (true) {
        doSomeThing(); 
     }
-    ```javascript
+    ```
     
 16. 块语句间隔，推荐： () 两边添加空格
     ```javascript
