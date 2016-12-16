@@ -1,0 +1,175 @@
+/**
+ * 元素选择器
+ * */
+h1{
+	color: gray;
+	/*font-family的值使用","分隔,  其他声明的属性的值有多个关键字须用空格分隔*/
+	font-family: "微软雅黑", serif;
+	font: medium helvetica;
+}
+h2{
+	color: silver;
+}
+p{
+	font-family: "微软雅黑", serif;
+}
+
+/**
+ * 选择器分组
+ * */
+h1, h2{
+	background-color: lightcyan;
+}
+/*通配符*/
+*{
+	margin: 0;
+	padding: 0;
+}
+
+/*
+ * 类选择器   区分大小写
+ */
+.p-default{
+	color: #78D700;
+	margin: 10px;
+	font-style: italic;
+}
+.platform-bug.p-default{
+	border: 1px solid gray;
+	font-size: x-large;
+}
+.p-default.platform-code{
+	font-style: normal;
+}
+
+/*
+ * ID选择器  区分大小写
+ */
+#title{
+	font-size: 36px;
+}
+
+/*
+ * 属性选择器  支持IE7+
+ */
+h1[class]{
+	margin: 5px;
+	color: white;
+	background-color: brown;
+}
+a[href][title]{
+	display: block;
+	text-decoration: none;
+	font-size: 20px;
+}
+a[title="google.hk"]{
+	color: #78D700;
+}
+/*属性值包含*/
+p[class~="p-default"]{
+	border: 1px dotted blue;
+}
+/*以p-开头*/
+p[class^="p-"]{
+	border: 1px solid blue;
+}
+/*以bug结尾*/
+p[class$="-bug"]{
+	color: red;
+}
+/*包含-*/
+p[class*="-"]{
+	color: lightpink;
+}
+/*等于p或者以p-开头*/
+p[class|='p']{
+	background-color: #808080;
+}
+
+/*
+ * 文档结构选择
+ */
+
+/*子代选择器*/
+div > h1{
+	color: #FFF;
+	background-color: blue;
+}
+/*后代选择器*/
+div span{
+	font-size: 24px;
+}
+
+/*相邻兄弟元素 : p，h1有共同的父容器，p紧跟h1之后*/
+/*h1 p 的文本内容不会影响相邻兄弟结合符起作用，因为文本内容属于父元素的一部分*/
+div h1 + p{
+	color: greenyellow;
+}
+
+/*
+ * 伪类选择器
+ */
+.wrap > a{
+	margin: 10px;
+	background-color: #78D787;
+	color: #FFF;
+	text-decoration: none;
+}
+.wrap > a:link{
+	color: black;
+}
+.wrap > a:visited{
+	color: gray;
+}
+.wrap > a:hover{
+	color: #FFF;
+}
+.wrap > a:active{
+	color: gold;
+}
+.wrap > a:visited:hover{
+	color: darkslategrey;
+}
+
+.wrap > input:focus{
+	background-color: silver;
+}
+
+ul > li:first-child{
+	background-color: gray;
+}
+/*ie9+*/
+ul > li:last-child{
+	background-color: green;
+}
+/*ie9+*/
+ul > li:nth-child(2n){
+	background-color: red;
+}
+
+/*根据语言选择*/
+*:lang(de){
+	font-style: italic;
+}
+
+/*
+ * 伪元素选择器
+ */
+p:first-letter{
+	font-size: 30px;
+	color: red;
+}
+p:first-line{
+	color: purple;
+}
+a:first-letter{
+	font-size: 30px;
+	color: red;
+}
+
+ul > li:before{
+	content: "《";
+}
+ul > li:after{
+	content: "》";
+}
